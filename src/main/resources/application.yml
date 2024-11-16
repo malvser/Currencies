@@ -1,0 +1,35 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: Currencies
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 50
+        order_inserts: true
+        order_updates: true
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/currencies_db
+    username: user
+    password: password
+  main:
+    allow-bean-definition-overriding: true
+
+routes:
+  currencylayer: http://apilayer.net
+  endpoint:
+    currencylayer:
+      exchange-rate: '${routes.currencylayer}/api/live'
+
+clients:
+  currencylayer:
+    accessKey: dec6d1b4dcf776cb216bf446240dea8d
