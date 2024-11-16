@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: currency-db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: currencies_db
+    ports:
+      - "5432:5432"
+    networks:
+      - currency-network
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+networks:
+  currency-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
