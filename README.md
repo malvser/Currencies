@@ -68,7 +68,7 @@ cd <repository-directory>
 2. Run the database using Docker Compose:
 
 ```
-docker-compose up -d
+postgres/docker-compose up -d
 ```
 3. Check if the database is working:
 ```

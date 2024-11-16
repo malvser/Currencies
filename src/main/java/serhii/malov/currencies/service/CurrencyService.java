@@ -122,8 +122,8 @@ public class CurrencyService {
      * Fetches exchange rates from an external source and updates the exchange rates in the repository and cache.
      * This method is scheduled to run periodically.
      */
-//    @Scheduled(fixedRate = 3600000)  // 1 hour
-    @Scheduled(fixedRate = 60000)  // 1 minute
+    @Scheduled(fixedRate = 3600000)  // 1 hour
+//    @Scheduled(fixedRate = 60000)  // 1 minute
     @Transactional
     public void fetchExchangeRates() {
         logger.info("Fetching exchange rates for all currencies...");
